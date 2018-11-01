@@ -1,3 +1,8 @@
+# Comments
+1. I didn't verify the correctness of the rate calculated. I would suspect that the loss of data could happen during the reading data from the log file because the data is not 100% clean.
+2. The whole process would take a few minutes to be done after we call "docker-compose up". So I decided to use a "Is process done" flag to show if all the data has been processed.
+
+
 # Insight DevOps Engineering System Puzzle: Weblog
 
 ## Table of Contents

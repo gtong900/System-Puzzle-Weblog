@@ -8,6 +8,8 @@ services:
      - env_file
     networks:
       - db_network
+    ports:
+      - "5433:5432"
   flaskapp:
     build: .
     env_file:
@@ -41,7 +43,7 @@ services:
     depends_on:
       - rabbit
     ports:
-     - "80:5672"
+     - "82:5672"
   processing:
     build: processing/.
     env_file:
@@ -57,7 +59,7 @@ services:
   nginx:
     image: "nginx:1.13.5"
     ports:
-      - "80:8080"
+      - "8080:80"
     volumes:
       - ./conf.d:/etc/nginx/conf.d
     networks:

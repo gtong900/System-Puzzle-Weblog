@@ -6,6 +6,7 @@ COPY requirements_app.txt /opt/services/flaskapp/src/
 WORKDIR /opt/services/flaskapp/src
 RUN pip install -r requirements_app.txt
 COPY . /opt/services/flaskapp/src
+COPY docker-entrypoint-initdb.d /docker-entrypoint-initdb.d
 EXPOSE 5000
 
 CMD ["python", "app.py"]
